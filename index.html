@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0" />
+
+    <title>Ω500 - flappy bird</title>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="res/main.css">
+</head>
+<body>
+    <section>
+        <canvas id="board"></canvas>
+    </section>
+
+    <!-- Ω500 lib -->
+    <script src="build/Ω500.js"></script>
+
+    <!-- Game -->
+    <script src="src/game.js"></script>
+    <script src="src/entities/Bird.js"></script>
+    <script src="src/entities/Pipe.js"></script>
+    <script src="src/screens/MainScreen.js"></script>
+    <script src="src/screens/TitleScreen.js"></script>
+    <script>
+        var game = new OmegaGame(288, 512);
+    </script>
+
+    <hr />
+    
+    <div id="debug" style="text-align: left">
+    </div>
+
+</body>
+</html>

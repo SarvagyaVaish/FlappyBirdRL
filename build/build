@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Concats the library into Ω500.js
+
+header=$(cat << EOF
+/*
+	Ω500 Game library v0.3.1
+	by Mr Speaker
+*/
+EOF
+)
+
+echo "${header}" | \
+
+cat - \
+\
+../Ω/Ω.js \
+../Ω/utils/base.js \
+../Ω/utils/rays.js \
+../Ω/utils/Timer.js \
+../Ω/utils/utils.js \
+../Ω/utils/State.js \
+../Ω/utils/Stats.js \
+../Ω/utils/colors.js \
+../Ω/gfx/gfx.js \
+../Ω/input/input.js \
+../Ω/assets/Image.js \
+../Ω/assets/Sound.js \
+../Ω/assets/Tiled.js \
+../Ω/cameras/Camera.js \
+../Ω/cameras/TrackingCamera.js \
+../Ω/physics/Physics.js \
+../Ω/effects/Particle.js \
+../Ω/effects/Shake.js \
+../Ω/effects/Flash.js \
+../Ω/effects/Spring.js \
+../Ω/screens/Screen.js \
+../Ω/screens/Dialog.js \
+../Ω/traits/Trait.js \
+../Ω/traits/traits.js \
+../Ω/gfx/SpriteSheet.js \
+../Ω/gfx/SpriteAtlas.js \
+../Ω/text/Font.js \
+../Ω/anim/Anims.js \
+../Ω/anim/Anim.js \
+../Ω/maps/Map.js \
+../Ω/maps/DebugMap.js \
+../Ω/maps/IsoMap.js \
+../Ω/maps/RayCastMap.js \
+../Ω/entities/Entity.js \
+../Ω/Game.js \
+\
+> Ω500.js
+
+# Copy the library to the template project
+cp Ω500.js ../ex/template/lib
