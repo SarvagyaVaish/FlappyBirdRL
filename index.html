@@ -1,86 +1,222 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Flappybirdrl by SarvagyaVaish</title>
-  </head>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>Flappy Bird RL by SarvagyaVaish</title>
+</head>
 
-  <body>
-    <div id="container">
-      <div class="inner">
+<body>
+	<div id="container">
+		<div class="inner">
 
-        <header>
-          <h1>Flappybirdrl</h1>
-          <h2>Flappy Bird hack using Reinforcement Learning</h2>
-        </header>
+			<header>
+				<h1>Flappy Bird RL</h1>
+				<h2>Flappy Bird hack using Reinforcement Learning</h2>
+			</header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/SarvagyaVaish/FlappyBirdRL/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/SarvagyaVaish/FlappyBirdRL/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/SarvagyaVaish/FlappyBirdRL" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+			<section id="downloads" class="clearfix">
+				<a href="https://github.com/SarvagyaVaish/FlappyBirdRL" id="view-on-github" class="button"><span>View on GitHub</span></a>
+			</section>
 
-        <hr>
+			<hr>
 
-        <section id="main_content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+			<section id="main_content">
+				<h3>
+					<a name="the-hack" class="anchor" href="#the-hack"><span class="octicon octicon-link"></span></a>The Hack.
+				</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+				<div style="text-align: center">
+					<iframe width="420" height="315" src="//www.youtube.com/embed/luld814mvHg" frameborder="0" allowfullscreen></iframe>
+				</div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+				<p>
+					This is a hack for the popular game, Flappy Bird. Although the game is 
+					<a href="http://news.cnet.com/8301-1035_3-57618612-94/bye-bye-flappy-bird-popular-game-grounded-by-its-creator/">
+						no longer available
+					</a> 
+					on Google Play or the App Store, it did not stop folks from creating very good replicas for the web. People have also created some very interesting varients of the game - 
+					<a href="http://www.mrspeaker.net/dev/game/flappy/">
+						Flappy Bird Typing Tutor.
+					</a>
+				</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+				<p>
+					After playing the game a few times (read few hours), I saw the opportunity to practice my machine learning skills and try and get Flappy Bird to learn how to play the game by itself. The video above shows the results of a really well trained Flappy Bird that basically keeps dodging pipes forever. 
+				</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+				
+				<h3>
+					<a name="the-how" class="anchor" href="#the-how"><span class="octicon octicon-link"></span></a>The How.
+				</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+				<p>
+					Initially, I wanted to create this hack for the Android app and I was planning to use 
+					<a href="http://developer.android.com/tools/help/monkeyrunner_concepts.html">
+						Monekyrunner
+					</a>
+					to get screenshots and send click commands. But it takes about 1 - 2 seconds to get a screenshot and that was definitely not fast and responsive enough.
+				</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+				<p>
+					Then I found 
+					<a href="https://twitter.com/mrspeaker">@mrspeaker</a>'s
+					game engine, Omega500 and his 
+					<a href="http://www.mrspeaker.net/dev/game/flappy/">
+						version
+					</a>
+					of Flappy Bird for typing practice. I ripped out the typing component and added some javascript Q Learning code to it. 
+				</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+				
+				<h4>Reinforcement Learning</h4>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+				<p>
+					Here's the basic principle - the agent (Flappy Bird in this case) performs a certain action in a state. It then finds itself in a new state and gets a reward based on that. There are many varients to be used in different situations - Policy Iteration, Value Iteration, Q Learning, etc. 
+				</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+				
+				<h4>Q Learning</h4>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+				<p>
+					I used Q Learning because it is a model free form of reinformcent learning. That means that I didn't have to model the dynamics of Flappy Bird; how it rises and falls, reacts to clicks and other things of that nature.
+				</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
+				<p>
+					<a href="http://artint.info/html/ArtInt_265.html">
+						Here
+					</a>
+					is a nice, concise description of Q Leanring. The following is the algorithm.
+				</p>
 
-        <footer>
-          Flappybirdrl is maintained by <a href="https://github.com/SarvagyaVaish">SarvagyaVaish</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+				<p style="text-align: center">
+					<img src="images/RLAlgorithm.PNG" />
+				</p>
 
-                  <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-48101384-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+				
+				<h5><strong>State Space</strong></h5>
 
-      </div>
-    </div>
-  </body>
+				<p>
+					I discretized my space over the folowing parameters. 
+					
+					<ul>
+						<li>Vertical distance from lower pipe</li> 
+						<li>Horizontal distance from next pair of pipes</li>
+						<li>Life: Dead or Living</li>
+					</ul>
+
+					<p style="text-align: center"><img src="images/StateSpace.PNG"></p>
+				</p>
+
+				
+				<h5><strong>Actions</strong></h5>
+
+				<p>
+					For each state, I have two possible actions
+					
+					<ul>
+						<li>Click</li> 
+						<li>Do Nothing</li>
+					</ul>
+				</p>
+
+				
+				<h5><strong>Rewards</strong></h5>
+
+				<p>
+					The reward structure is purely based on the "Life" parameter. 
+					
+					<ul>
+						<li><strong>+1</strong> if Flappy Bird is still alive</li> 
+						<li><strong>-1000</strong> if Flappy Bird is dead</li>
+					</ul>
+				</p>
+
+
+				<h5><strong>The Learning Loop</strong></h5>
+
+				<p>
+					The array Q is initialized with zeros and I always choose the best action, the action that will maximize my expected reward. To break ties I chose "Do Nothing" because that is the more common action. 
+				</p>
+
+				<p>
+					<strong>Step 1: </strong>
+					Observe what state Flappy Bird is in and perform the action that maximizes expected reward.  
+				</p>
+
+				<p>
+					Let the game engine perform its "tick". Now Flappy Bird is in a next state (s').
+				</p>
+
+				<p>
+					<strong>Step 2: </strong>
+					Observer s' and reward associated with it. +1 if the bird is still alive, -1000 otherwise.
+				</p>
+
+				<p>
+					<strong>Step 3: </strong>
+					Update the Q array according to the Q Learning rule. 
+				</p>
+
+				<p style="text-align: center">
+					Q[s,a] ← Q[s,a] + α (r + γ*V(s') - Q[s,a])
+				</p>
+
+				<p>
+					The alpha I cose was 0.7 because we have a deterministic state and i wanted it to be pretty hard to un-learn something. Alsp, the dicount factor (lambda) was just 1.
+				</p>
+
+				<p>
+					<strong>Step 4: </strong>
+					Set the current state to s' and start over.
+				</p>
+
+
+				<h3>
+					<a name="the-next-steps" class="anchor" href="#the-next-steps"><span class="octicon octicon-link"></span></a>The Next Steps.
+				</h3>
+
+				<p>
+					<ul>
+						<li>It took about 6-7 hours to train Flappy Bird to be good enough (150 score). This can be improved by instantiating more than 1 bird in the beginning and have all of them contribute their "learnings" to the same Q array</li>
+						<li>Another way to make the learning faster would be to let users provide "good" input. Right now you can click on the game to make Flappy Bird jump but that input is not taken into account by the learner.</li>
+						<li>Get this to work on a mobile phone!! If anyone has any ideas , please let me know in the comments :) </li>
+					</ul>
+				</p>
+
+
+				<h3>
+					<a name="comments" class="anchor" href="#comments"><span class="octicon octicon-link"></span></a>Comments.
+				</h3>
+				Want to leave a comment? Visit <a href="https://github.com/SarvagyaVaish/FlappyBirdRL/issues/1"> this post's issue page on GitHub</a> (you'll need a GitHub account. What? Like you already don't have one?!).
+
+			</section>
+
+
+			<footer>
+				Flappy Bird RL is maintained by <a href="https://github.com/SarvagyaVaish">SarvagyaVaish</a><br>
+				This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+			</footer>
+
+			<script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+				try {
+					var pageTracker = _gat._getTracker("UA-48101384-1");
+					pageTracker._trackPageview();
+				} catch(err) {}
+			</script>
+
+		</div>
+	</div>
+</body>
 </html>
