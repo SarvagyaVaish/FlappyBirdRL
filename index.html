@@ -42,7 +42,7 @@
 					<a href="http://news.cnet.com/8301-1035_3-57618612-94/bye-bye-flappy-bird-popular-game-grounded-by-its-creator/">
 						no longer available
 					</a> 
-					on Google Play or the App Store, it did not stop folks from creating very good replicas for the web. People have also created some very interesting varients of the game - 
+					on Google Play or the App Store, it did not stop folks from creating very good replicas for the web. People have also created some interesting variants of the game - 
 					<a href="http://www.mrspeaker.net/dev/game/flappy/">
 						Flappy Bird Typing Tutor.
 					</a>
@@ -62,7 +62,7 @@
 					<a href="http://developer.android.com/tools/help/monkeyrunner_concepts.html">
 						Monekyrunner
 					</a>
-					to get screenshots and send click commands. But it takes about 1 - 2 seconds to get a screenshot and that was definitely not fast and responsive enough.
+					to get screenshots and send click commands. But it takes about 1 - 2 seconds to get a screenshot and that was definitely not fast or responsive enough.
 				</p>
 
 				<p>
@@ -79,7 +79,7 @@
 				<h4>Reinforcement Learning</h4>
 
 				<p>
-					Here's the basic principle - the agent (Flappy Bird in this case) performs a certain action in a state. It then finds itself in a new state and gets a reward based on that. There are many varients to be used in different situations - Policy Iteration, Value Iteration, Q Learning, etc. 
+					Here's the basic principle: the agent, Flappy Bird in this case, performs a certain action in a state. It then finds itself in a new state and gets a reward based on that. There are many variants to be used in different situations: Policy Iteration, Value Iteration, Q Learning, etc. 
 				</p>
 
 				
@@ -93,7 +93,7 @@
 					<a href="http://artint.info/html/ArtInt_265.html">
 						Here
 					</a>
-					is a nice, concise description of Q Leanring. The following is the algorithm.
+					is a nice, concise description of Q Learning. The following is the algorithm.
 				</p>
 
 				<p style="text-align: center">
@@ -143,7 +143,7 @@
 				<h5><strong>The Learning Loop</strong></h5>
 
 				<p>
-					The array Q is initialized with zeros and I always choose the best action, the action that will maximize my expected reward. To break ties I chose "Do Nothing" because that is the more common action. 
+					The array Q is initialized with zeros and I always chose the best action, the action that will maximize my expected reward. To break ties I chose "Do Nothing" because that is the more common action. 
 				</p>
 
 				<p>
@@ -152,12 +152,12 @@
 				</p>
 
 				<p>
-					Let the game engine perform its "tick". Now Flappy Bird is in a next state (s').
+					Let the game engine perform its "tick". Now. Flappy Bird is in a next state, s'.
 				</p>
 
 				<p>
 					<strong>Step 2: </strong>
-					Observer s' and reward associated with it. +1 if the bird is still alive, -1000 otherwise.
+					Observe new state, s', and the reward associated with it. +1 if the bird is still alive, -1000 otherwise.
 				</p>
 
 				<p>
@@ -170,7 +170,7 @@
 				</p>
 
 				<p>
-					The alpha I cose was 0.7 because we have a deterministic state and i wanted it to be pretty hard to un-learn something. Alsp, the dicount factor (lambda) was just 1.
+					The alpha I chose is 0.7 because we have a deterministic state and I wanted it to be pretty hard to un-learn something. Also, the dicount factor, lambda, was 1.
 				</p>
 
 				<p>
@@ -185,8 +185,8 @@
 
 				<p>
 					<ul>
-						<li>It took about 6-7 hours to train Flappy Bird to be good enough (150 score). This can be improved by instantiating more than 1 bird in the beginning and have all of them contribute their "learnings" to the same Q array</li>
-						<li>Another way to make the learning faster would be to let users provide "good" input. Right now you can click on the game to make Flappy Bird jump but that input is not taken into account by the learner.</li>
+						<li>It took about 6-7 hours to train Flappy Bird to be good enough (150 score). This can be improved by instantiating more than 1 bird in the beginning and have all of them contribute their "learnings" to the same Q array.</li>
+						<li>Another way to make the learning faster would be to let users provide "good" input. Right now, you can click on the game to make Flappy Bird jump. But, that input is not taken into account by the learner.</li>
 						<li>Get this to work on a mobile phone!! If anyone has any ideas , please let me know in the comments :) </li>
 					</ul>
 				</p>
