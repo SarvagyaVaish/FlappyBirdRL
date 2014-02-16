@@ -15,7 +15,8 @@
 		bgOffset: 0,
 
 		sounds: {
-			"point": new Ω.Sound("res/audio/sfx_point", 1)
+			"point": new Ω.Sound("res/audio/sfx_point", 1),
+			"hit": new Ω.Sound("res/audio/sfx_hit", 1)
 		},
 
 		shake: null,
@@ -130,6 +131,8 @@
 							window.game.best = this.score;
 						}
 					}
+
+					this.sounds.hit.play();
 					
 					//console.log("Died at location: " + this.bird.y);
 					//for (var i = 80; i < 90; i++) {
@@ -330,7 +333,7 @@
 				if (!p.counted && p.x < this.bird.x) {
 					p.counted = true;
 					this.score += 0.5;
-					//this.sounds.point.play();
+					this.sounds.point.play();
 				}
 
 				if (p.reset) {
