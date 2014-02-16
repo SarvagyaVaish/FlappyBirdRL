@@ -136,7 +136,8 @@
 					//	console.log( "i: " + i + ", click: " + this.Q[i]["click"] + ", do_nothing: " +this.Q[i]["do_nothing"] );
 					//}
 
-					this.printState();
+					// Print debug stuff 
+					//this.printState();
 
 					this.reset();
 					this.state.set("BORN");
